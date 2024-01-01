@@ -1,0 +1,20 @@
+QMenuBar{
+    background-color: transparent;
+}
+QWidget{
+    background-color: transparent;
+}
+QMenuBar::item {
+    border: 1px solid white;
+    background-color: transparent;
+}
+QMenuBar::item::selected{
+    background: transparent;
+    border: 2px solid white;
+}
+QMenuBar::item::pressed{
+    background: white;
+}
+QMainWindow{
+    background-color: transparent;
+}

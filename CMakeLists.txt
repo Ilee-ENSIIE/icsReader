@@ -17,13 +17,20 @@ set(PROJECT_SOURCES
         calendar.cpp
         calendar.h
         calendar.ui
+        resource_file.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(iCalandarReader
+
+
+qt_add_executable(iCalandarReader
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
+target_sources(iCalandarReader
+  PRIVATE
+    resource_file.qrc
+)
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET iCalandarReader APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
@@ -32,6 +39,7 @@ else()
     if(ANDROID)
         add_library(iCalandarReader SHARED
             ${PROJECT_SOURCES}
+            resource_file.resource_file.qrc
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")

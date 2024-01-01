@@ -18,6 +18,9 @@ public:
     ~Calendar();
 
 private:
+    QIcon paintIcon(QString,QColor);
+    void setupMenu(void);
+    void setupMainWidget(void);
     Ui::Calendar *ui;
 };
 #endif // CALENDAR_H
